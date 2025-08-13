@@ -27,11 +27,11 @@
     }
   },
   "devDependencies": {
-    "electron": "^31.0.0",
+    "electron": "^31.7.7",
     "electron-builder": "^25.0.0"
   },
   "dependencies": {
-    "escpos": "^4.0.0",
-    "escpos-network": "^4.0.0"
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-network": "^3.0.0-alpha.5"
   }
 }
