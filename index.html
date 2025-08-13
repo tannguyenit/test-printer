@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test In Hóa Đơn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./JSPrintManager.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <div class="bg-white p-6 rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-4 text-center">Test Máy In POS</h1>
+    <div class="mb-4">
+      <label for="printer-ip" class="block text-sm font-medium text-gray-700">IP Máy In</label>
+      <input
+        type="text"
+        id="printer-ip"
+        placeholder="Nhập IP máy in (VD: 192.168.1.100)"
+        class="mt-1 p-2 w-full border rounded-md"
+      >
+    </div>
+    <button
+      id="test-btn"
+      class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 flex items-center justify-center"
+    >
+      <span id="buttonText">Test In Hóa Đơn</span>
+      <svg id="loadingSpinner" class="hidden animate-spin h-5 w-5 ml-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </button>
+    <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
+  </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
