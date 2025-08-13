@@ -7,6 +7,7 @@
     "build": "electron-builder"
   },
   "build": {
+    "publish": "never",
     "appId": "com.example.posprinter",
     "productName": "POS Printer Test",
     "directories": {
