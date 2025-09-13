@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "escpos": "^3.0.0-alpha.6",
-    "escpos-network": "^3.0.0-alpha.5"
+    "escpos-network": "^3.0.0-alpha.5",
+    "escpos-usb": "^3.0.0-alpha.4"
   }
 }

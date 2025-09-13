@@ -1,37 +1,89 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test In Hóa Đơn</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./JSPrintManager.js"></script>
+  <title>POS Printer App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .printer-section {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    select, input {
+      padding: 8px;
+      margin: 10px 0;
+      width: 100%;
+    }
+    button {
+      padding: 8px 12px;
+      margin-right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: #f5f5f5;
+      min-height: 20px;
+    }
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white p-6 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-4 text-center">Test Máy In POS</h1>
-    <div class="mb-4">
-      <label for="printer-ip" class="block text-sm font-medium text-gray-700">IP Máy In</label>
-      <input
-        type="text"
-        id="printer-ip"
-        placeholder="Nhập IP máy in (VD: 192.168.1.100)"
-        class="mt-1 p-2 w-full border rounded-md"
-      >
+<body>
+  <div class="container">
+    <h1>POS Printer App</h1>
+    
+    <div class="printer-section">
+      <h2>Máy In USB</h2>
+      <select id="usb-printer-select">
+        <option value="">-- Chọn máy in USB --</option>
+      </select>
+      <div class="buttons">
+        <button id="refresh-usb-btn">🔄 Làm mới danh sách</button>
+        <button id="test-usb-connection-btn">🔌 Kiểm tra kết nối</button>
+        <button id="print-usb-test-btn">🖨️ In thử</button>
+      </div>
+      <div id="usb-status" class="status"></div>
     </div>
-    <button
-      id="test-btn"
-      class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 flex items-center justify-center"
-    >
-      <span id="buttonText">Test In Hóa Đơn</span>
-      <svg id="loadingSpinner" class="hidden animate-spin h-5 w-5 ml-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
-    </button>
-    <p id="status" class="mt-4 text-center text-sm text-gray-600"></p>
+
+    <div class="printer-section">
+      <h2>Máy In Mạng</h2>
+      <input type="text" id="printer-ip" placeholder="Nhập địa chỉ IP máy in (ví dụ: 192.168.1.100)">
+      <div class="buttons">
+        <button id="network-test-btn">🖨️ In thử</button>
+      </div>
+      <div id="network-status" class="status"></div>
+    </div>
   </div>
 
-    <script src="renderer.js"></script>
+  <script src="renderer.js"></script>
 </body>
 </html>
